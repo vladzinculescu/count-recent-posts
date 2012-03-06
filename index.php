@@ -1,8 +1,10 @@
 <?php
 /*
 Plugin Name: Count Recent Posts
-Plugin URI: http://
-Description: Counts the recents posts in a given category from the last visit on a domain. If first visit adds a default value
+Plugin URI: http://github.com/vladzinculescu/count-recent-posts
+Description: Counts the recents posts in a given category from the last visit on a domain.
+			 If first visit counts all posts published within the last 30 days.
+			 If no new posts are found you can pass a default number ( default is 0 )
 Version: 0.1
 Author: Vlad Zinculescu
 Author URI: http://about.me/vladzinculescu
