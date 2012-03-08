@@ -21,24 +21,24 @@ add_action('plugins_loaded','crp_init');//this is to trigger the init function b
 function crp_set_visit($first_visit=false){
 	if($first_visit) {		
 		//set last visit to 30days back
-		setcookie("crp_last_visit_".$_SERVER['HTTP_HOST'], date('Y-m-d H:i:s', strtotime('-30 days')), time()+ 31536000, "/"); //it expires after one year
+		setcookie("crp_last_visit_", date('Y-m-d H:i:s', strtotime('-30 days')), time()+ 31536000, "/"); //it expires after one year
 		//hack in order to get the new value of the cookie
-		$_COOKIE["crp_last_visit_".$_SERVER['HTTP_HOST']] = date('Y-m-d H:i:s', strtotime('-30 days'));
+		$_COOKIE["crp_last_visit_"] = date('Y-m-d H:i:s', strtotime('-30 days'));
 	} else {
 		//set last visit to now
-		setcookie("crp_last_visit_".$_SERVER['HTTP_HOST'], date('Y-m-d H:i:s') , time() + 31536000, "/"); //it expires after one year
+		setcookie("crp_last_visit_", date('Y-m-d H:i:s') , time() + 31536000, "/"); //it expires after one year
 		//hack in order to get the new value of the cookie
-		$_COOKIE["crp_last_visit_".$_SERVER['HTTP_HOST']] = date('Y-m-d H:i:s');
+		$_COOKIE["crp_last_visit_"] = date('Y-m-d H:i:s');
 	}	
 }
 function crp_get_visit(){
 	if( crp_check_visit() ){
-		return $_COOKIE["crp_last_visit_".$_SERVER['HTTP_HOST']];
+		return $_COOKIE["crp_last_visit_"];
 	}
 	return false;
 }
 function crp_check_visit(){
-	if( isset( $_COOKIE["crp_last_visit_".$_SERVER['HTTP_HOST']] ) ) {
+	if( isset( $_COOKIE["crp_last_visit_"] ) ) {
 		return true;
 	}
 	return false;
