@@ -45,7 +45,7 @@ function crp_check_visit(){
 }
 
 function crp_filter_where($where = '') {
-    $where .= " AND post_date > '" . crp_get_visit() . "'";
+    $where .= " AND post_date_gmt > '" . crp_get_visit() . "'";
     return $where;
 }
 
